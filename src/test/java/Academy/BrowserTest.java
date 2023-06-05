@@ -12,20 +12,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrowserTest {
 
-	
+
 	@Test
 	public void getData()
 	{
 		System.out.println("Hello Guys");
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		WebDriver driver =new ChromeDriver();
-		driver.get("https://rahylshettyacademy.azurewebsites.net/webapp/");
+		driver.get("https://devops-basics-webapp.azurewebsites.net/webapp/");
 		String text =driver.findElement(By.cssSelector("h1")).getText();
 		System.out.println(text);
-		Assert.assertTrue(text.equalsIgnoreCase("RahulShettyAcademy.com Learning"));
+		Assert.assertTrue(text.equalsIgnoreCase("Devops Basics Learning"));
 		driver.close();
-	
-		
-		
+
 	}
 }
